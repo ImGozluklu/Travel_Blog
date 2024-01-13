@@ -1,0 +1,50 @@
+﻿@using Travel_Trip.Models.Siniflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<style>
+    .content {
+        padding: 20px;
+        background-color: #f8f8f8;
+    }
+
+    .wrap {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about {
+        text-align: center;
+    }
+
+        .about img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .about h3 {
+            color: #333;
+        }
+
+        .about h5 {
+            color: #666;
+            font-weight: normal;
+        }
+</style>
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımızda</h3>
+            @foreach (var x in Model)
+            {
+                <img src="@x.PhotoUrl" alt="Hakkımızda Resmi" />
+
+                <p><h5>@x.Aciklama</h5></p>
+            }
+        </div>
+    </div>
+</div>
